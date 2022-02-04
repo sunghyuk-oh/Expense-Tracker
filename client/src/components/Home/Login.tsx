@@ -9,7 +9,7 @@ const Login = () => {
     password: '',
   });
 
-  const usernameHandler = (e) => {
+  const usernameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserInfo({
       ...userInfo,
       [e.target.id]: e.target.value,
