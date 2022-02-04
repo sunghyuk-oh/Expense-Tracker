@@ -9,21 +9,15 @@ const Login = () => {
     password: '',
   });
 
-  const usernameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const loginHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserInfo({
       ...userInfo,
       [e.target.id]: e.target.value,
     });
   };
 
-  const passwordHandler = () => {};
-
-  const submitHandler = (event: React.FormEvent) => {
-    event.preventDefault();
-
-    setUserInfo({
-      ...userInfo,
-    });
+  const submitHandler = (e: React.FormEvent) => {
+    e.preventDefault();
   };
 
   return (
@@ -31,11 +25,11 @@ const Login = () => {
       <h1>Login</h1>
       <div>
         <label htmlFor="usename">Username</label>
-        <input type="text" id="username" onChange={usernameHandler} />
+        <input type="text" id="username" onChange={loginHandler} />
       </div>
       <div>
         <label htmlFor="password">Password</label>
-        <input type="password" id="password" onChange={passwordHandler} />
+        <input type="password" id="password" onChange={loginHandler} />
       </div>
       <div>
         <button type="submit">Login</button>
