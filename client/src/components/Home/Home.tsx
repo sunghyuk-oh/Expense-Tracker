@@ -35,7 +35,7 @@ const Home = () => {
       </section>
       <section>
         <div>
-          <img src="#" alt="Possible- Logo" />
+          <img src="#" alt="Possible-Logo" />
         </div>
         <div className={classes.content}>
           <h2>
