@@ -2,7 +2,7 @@ const Header = () => {
   return (
     <header>
       <div>
-        <img src="" alt="this" />
+        <img src="" alt="tracker logo" />
       </div>
       <ul>
         {/* <li>navLink </li> */}
