@@ -2,7 +2,7 @@ const Header = () => {
   return (
     <header>
       <div>
-        <img src="" alt="" />
+        <img src="" alt="this" />
       </div>
       <ul>
         {/* <li>navLink </li> */}
