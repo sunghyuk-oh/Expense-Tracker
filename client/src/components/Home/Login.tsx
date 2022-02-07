@@ -18,6 +18,21 @@ const Login = () => {
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
+
+    fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(userInfo),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        if (result.success) {
+          const token = result.token;
+
+          localStorage.setItem('jsonwebtoken', token);
+        }
+      });
   };
 
   return (
