@@ -3,6 +3,7 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bycrypt = require('bcryptjs');
 const { urlencoded } = require('express');
+const authenticate = require('./middleware/authMiddleware');
 
 const app = express();
 
@@ -10,13 +11,14 @@ app.use(cors());
 app.use(express.json());
 app.use(urlencoded());
 
-const users = [
+global.users = [
   {
     username: 'johndoe',
     password: 'password',
   },
 ];
 
+// DESCRIPTION  - LOGIN
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
@@ -34,4 +36,12 @@ app.post('/login', (req, res) => {
     res.json({ success: false, message: 'Not authenticated' });
   }
 });
+
+app.get('/accounts', authenticate, (req, res) => {
+  const { username } = req.body;
+  const userAcct = users.filter((user) => user.username == username);
+
+  res.json(userAcct);
+});
+
 app.listen(3000, () => console.log('Server is running...'));
