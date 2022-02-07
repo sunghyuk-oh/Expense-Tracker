@@ -37,7 +37,7 @@ const Register = () => {
       </div>
       <div>
         <label htmlFor="email">Email</label>
-        <input type="text" id="Email" onChange={registerHandler} />
+        <input type="text" id="email" onChange={registerHandler} />
       </div>
       <div>
         <label htmlFor="usename">Username</label>
