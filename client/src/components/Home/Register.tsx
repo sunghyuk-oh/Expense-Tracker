@@ -6,11 +6,13 @@ const Register = () => {
     lastName: string;
     username: string;
     password: string;
+    confirmPassword: string;
   }>({
     firstName: '',
     lastName: '',
     username: '',
     password: '',
+    confirmPassword: '',
   });
 
   const registerHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
