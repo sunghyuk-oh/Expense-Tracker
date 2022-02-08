@@ -6,6 +6,7 @@ import * as userActions from '../../store/actions/userActions';
 const Register = () => {
   const dispatch = useDispatch();
 
+  const [message, setMessage] = useState<String>('');
   const [newUserInfo, setNewUserInfo] = useState<{
     firstName: string;
     lastName: string;
@@ -40,12 +41,16 @@ const Register = () => {
         if (result.success) {
           console.log('Registration Success!');
           dispatch(userActions.registerUser());
+          setMessage(result.message);
+        } else {
+          setMessage(result.message);
         }
       });
   };
 
   return (
     <form onSubmit={submitHandler}>
+      <span>{message}</span>
       <h1>Register</h1>
       <div>
         <label htmlFor="firstName">First Name</label>

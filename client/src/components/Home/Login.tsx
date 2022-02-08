@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const Login: React.FC = (props) => {
+  const [message, setMessage] = useState<String>('');
   const [userInfo, setUserInfo] = useState<{
     username: string;
     password: string;
@@ -30,8 +31,10 @@ const Login: React.FC = (props) => {
           const token = result.token;
 
           localStorage.setItem('jsonwebtoken', token);
-
+          setMessage(result.message);
           // props.history.push('/');
+        } else {
+          setMessage(result.message);
         }
       });
 
@@ -51,6 +54,7 @@ const Login: React.FC = (props) => {
 
   return (
     <form onSubmit={submitHandler}>
+      <span>{message}</span>
       <h1>Login</h1>
       <div>
         <label htmlFor="usename">Username</label>

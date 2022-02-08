@@ -13,7 +13,6 @@ const Home = () => {
 
   const [isLoggingIn, setIsLoggingIn] = useState<Boolean>(true);
   const [isRegistering, setIsRegistering] = useState<Boolean>(false);
-  const [message, setMessage] = useState<String>('');
 
   const loginButtonHandler = () => {
     if (!isLoggingIn) {
