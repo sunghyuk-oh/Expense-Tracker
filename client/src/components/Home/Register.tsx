@@ -22,6 +22,18 @@ const Register = () => {
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
+
+    fetch('http://localhost:3000/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newUserInfo),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.success) {
+          console.log('Registration Success!');
+        }
+      });
   };
 
   return (
@@ -46,6 +58,14 @@ const Register = () => {
       <div>
         <label htmlFor="password">Password</label>
         <input type="password" id="password" onChange={registerHandler} />
+      </div>
+      <div>
+        <label htmlFor="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          onChange={registerHandler}
+        />
       </div>
       <div>
         <button type="submit">Register</button>
