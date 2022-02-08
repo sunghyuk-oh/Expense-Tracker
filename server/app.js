@@ -37,8 +37,8 @@ app.post('/login', (req, res) => {
   }
 });
 
-app.get('/accounts', authenticate, (req, res) => {
-  const { username } = req.body;
+app.get('/accounts/:username', authenticate, (req, res) => {
+  const { username } = req.params;
   const userAcct = users.filter((user) => user.username == username);
 
   res.json(userAcct);
