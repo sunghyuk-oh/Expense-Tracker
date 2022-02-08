@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import * as userActions from '../../store/actions/userActions';
 
 const Register = () => {
+  const dispatch = useDispatch();
+
   const [newUserInfo, setNewUserInfo] = useState<{
     firstName: string;
     lastName: string;
@@ -34,6 +39,7 @@ const Register = () => {
       .then((result) => {
         if (result.success) {
           console.log('Registration Success!');
+          dispatch(userActions.registerUser());
         }
       });
   };
