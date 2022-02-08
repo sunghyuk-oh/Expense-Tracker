@@ -1,16 +1,19 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-
+// import { useSelector } from 'react-redux';
+// import { RootState } from '../../store/reducers'; // NOTES  => for useSelector type
 import Login from './Login';
 import Register from './Register';
 
 import classes from './Home.module.css';
 
 const Home = () => {
-  const isRegistered = useSelector((state) => state.user.isRegistered);
+  // const isRegistered = useSelector(
+  //   (state: RootState) => state.user.isRegistered
+  // );
 
   const [isLoggingIn, setIsLoggingIn] = useState<Boolean>(true);
   const [isRegistering, setIsRegistering] = useState<Boolean>(false);
+  const [message, setMessage] = useState<String>('');
 
   const loginButtonHandler = () => {
     if (!isLoggingIn) {
