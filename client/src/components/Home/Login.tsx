@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Login = () => {
+const Login: React.FC = (props) => {
   const [userInfo, setUserInfo] = useState<{
     username: string;
     password: string;
@@ -26,13 +26,27 @@ const Login = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         if (result.success) {
           const token = result.token;
 
           localStorage.setItem('jsonwebtoken', token);
+
+          // props.history.push('/');
         }
       });
+
+    // const token = localStorage.getItem('jsonwebtoken');
+    // console.log(token);
+    // fetch(`http://localhost:3000/accounts/${userInfo.username}`, {
+    //   method: 'GET',
+    //   headers: { Authorization: `Bearer ${token}` },
+    // })
+    //   .then((res) => res.json())
+    //   .then((result) => {
+    //     if (result.success) {
+    //       console.log(result);
+    //     }
+    //   });
   };
 
   return (
