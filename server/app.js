@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-const bycrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 const { urlencoded } = require('express');
 const authenticate = require('./middleware/authMiddleware');
 
@@ -17,6 +17,39 @@ global.users = [
     password: 'password',
   },
 ];
+
+// DESCRIPTION  - REGISTER
+app.post('/register', (req, res) => {
+  const { firstName, lastName, email, username, password, confirmPassword } =
+    req.body;
+
+  if (password !== confirmPassword) {
+    res.json({ success: false, message: 'Please match the password' });
+  }
+
+  const user = users.find((user) => user.username === username);
+
+  if (!user) {
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(password, salt);
+
+    users.push({
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      username: username,
+      password: hash,
+    });
+    console.log(users);
+
+    res.json({ success: true, message: 'Successfully registered!' });
+  } else {
+    res.json({
+      success: false,
+      message: 'username existed. Please try again.',
+    });
+  }
+});
 
 // DESCRIPTION  - LOGIN
 app.post('/login', (req, res) => {
@@ -39,7 +72,7 @@ app.post('/login', (req, res) => {
 
 app.get('/accounts/:username', authenticate, (req, res) => {
   const { username } = req.params;
-  const userAcct = users.filter((user) => user.username == username);
+  const userAcct = users.filter((user) => user.username === username);
 
   res.json(userAcct);
 });
