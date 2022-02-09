@@ -1,19 +1,23 @@
 import * as actionTypes from './actionTypes';
 
-export const registerUser = () => {
+const registerUser = () => {
   return {
     type: actionTypes.ON_REGISTER,
   };
 };
 
-export const loginUser = () => {
+const loginUser = () => {
   return {
     type: actionTypes.ON_LOGIN,
   };
 };
 
-export const logoutUser = () => {
+const logoutUser = () => {
   return {
     type: actionTypes.ON_LOGOUT,
   };
 };
+
+const allUserActions = { registerUser, loginUser, logoutUser };
+
+export default allUserActions;

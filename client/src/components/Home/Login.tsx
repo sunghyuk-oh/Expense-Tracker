@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import userActions from '../../store/actions/userActions';
 
 const Login: React.FC = (props) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [message, setMessage] = useState<String>('');
   const [userInfo, setUserInfo] = useState<{
     username: string;
@@ -31,8 +36,9 @@ const Login: React.FC = (props) => {
           const token = result.token;
 
           localStorage.setItem('jsonwebtoken', token);
-          setMessage(result.message);
-          // props.history.push('/');
+
+          dispatch(userActions.loginUser());
+          navigate('/main');
         } else {
           setMessage(result.message);
         }
