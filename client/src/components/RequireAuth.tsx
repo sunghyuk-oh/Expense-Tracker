@@ -1,27 +1,11 @@
-import { Component } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/reducers';
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
-const RequireAuth = (ComposedComponent: any) => {
-  const navigate = useNavigate();
+const RequireAuth = ({ children }) => {
   const isLoggedIn = useSelector((state: RootState) => state.user.isLoggedIn);
 
-  class Authenticate extends Component {
-    constructor(props: any) {
-      super(props);
-
-      if (isLoggedIn) {
-        navigate('/');
-      }
-    }
-
-    render() {
-      return <ComposedComponent {...this.props} />;
-    }
-  }
-
-  return Authenticate;
+  return isLoggedIn === true ? children : <Navigate to="/" replace />;
 };
 
 export default RequireAuth;

@@ -10,7 +10,14 @@ function App() {
     <Fragment>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/main" element={RequireAuth(<Main />)} />
+        <Route
+          path="/main"
+          element={
+            <RequireAuth>
+              <Main />
+            </RequireAuth>
+          }
+        />
       </Routes>
     </Fragment>
   );
