@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,9 +8,12 @@ const Logout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  localStorage.removeItem('userToken');
-  dispatch(userActions.logoutUser());
-  navigate('/');
+  useEffect(() => {
+    localStorage.removeItem('userToken');
+    dispatch(userActions.logoutUser());
+    navigate('/');
+  });
+
   return <Fragment></Fragment>;
 };
 

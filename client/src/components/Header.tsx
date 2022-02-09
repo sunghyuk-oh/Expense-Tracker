@@ -1,16 +1,5 @@
 const Header = () => {
-  return (
-    <header>
-      <div>
-        <img src="" alt="tracker logo" />
-      </div>
-      <ul>
-        {/* <li>navLink </li> */}
-        {/* <li>navLink</li> */}
-        {/* <li>navLink</li> */}
-      </ul>
-    </header>
-  );
+  return <div></div>;
 };
 
 export default Header;
