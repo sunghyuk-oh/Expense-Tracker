@@ -3,9 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 
+import Landing from './components/Landing/Landing';
 import Home from './components/Home/Home';
-import Main from './components/Main/Main';
-import Logout from './components/Home/Logout';
+import Logout from './components/Landing/Logout';
 import RequireAuth from './components/Auth/RequireAuth';
 import RequireLogout from './components/Auth/RequireLogout';
 
@@ -17,7 +17,7 @@ function App() {
           path="/"
           element={
             <RequireLogout>
-              <Home />
+              <Landing />
             </RequireLogout>
           }
         />
@@ -25,7 +25,7 @@ function App() {
           path="/main"
           element={
             <RequireAuth>
-              <Main />
+              <Home />
             </RequireAuth>
           }
         />
