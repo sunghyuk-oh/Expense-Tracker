@@ -8,6 +8,7 @@ const Main = () => {
             <NavLink to="/logout">Logout</NavLink>
           </button>
         </li>
+        <li>Main Page!</li>
       </ul>
     </header>
   );

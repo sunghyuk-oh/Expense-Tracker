@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { RootState } from '../store/reducers';
+import { RootState } from '../../store/reducers';
 import { Navigate } from 'react-router-dom';
 
 const RequireAuth: React.FC<{ children: any }> = ({ children }) => {

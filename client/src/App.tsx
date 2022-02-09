@@ -5,14 +5,22 @@ import './App.css';
 
 import Home from './components/Home/Home';
 import Main from './components/Main/Main';
-import RequireAuth from './components/RequireAuth';
 import Logout from './components/Home/Logout';
+import RequireAuth from './components/Auth/RequireAuth';
+import RequireLogout from './components/Auth/RequireLogout';
 
 function App() {
   return (
     <Fragment>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <RequireLogout>
+              <Home />
+            </RequireLogout>
+          }
+        />
         <Route
           path="/main"
           element={
