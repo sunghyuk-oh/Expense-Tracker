@@ -35,7 +35,7 @@ const Login: React.FC = () => {
         if (result.success) {
           const token = result.token;
 
-          localStorage.setItem('jsonwebtoken', token);
+          localStorage.setItem('userToken', token);
 
           dispatch(userActions.loginUser());
           navigate('/main');

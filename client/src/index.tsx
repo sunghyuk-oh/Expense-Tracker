@@ -11,7 +11,7 @@ import rootReducer from '../src/store/reducers';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
-const token = localStorage.getItem('jsonwebtoken');
+const token = localStorage.getItem('userToken');
 if (token) {
   store.dispatch({ type: 'ON_LOGIN' });
 }
