@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import userActions from '../../store/actions/userActions';
 
-const Login: React.FC = (props) => {
+const Login: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [message, setMessage] = useState<String>('');
