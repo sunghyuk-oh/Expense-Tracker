@@ -23,6 +23,10 @@ const Home = () => {
             <label htmlFor="price"></label>
             <input type="text" id="price" />
           </div>
+          <div>
+            <label htmlFor="category"></label>
+            <input type="text" id="category" />
+          </div>
 
           <button>Add Expense</button>
         </form>
