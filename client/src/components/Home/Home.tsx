@@ -15,8 +15,14 @@ const Home = () => {
       <section>
         <h1>This is the Main Page!</h1>
         <form>
-          <label htmlFor=""></label>
-          <input type="text" />
+          <div>
+            <label htmlFor="title"></label>
+            <input type="text" id="title" />
+          </div>
+          <div>
+            <label htmlFor="price"></label>
+            <input type="text" id="price" />
+          </div>
         </form>
       </section>
     </main>
