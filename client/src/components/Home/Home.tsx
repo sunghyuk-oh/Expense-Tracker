@@ -14,6 +14,10 @@ const Home = () => {
       </header>
       <section>
         <h1>This is the Main Page!</h1>
+        <form>
+          <label htmlFor=""></label>
+          <input type="text" />
+        </form>
       </section>
     </main>
   );
