@@ -2,16 +2,19 @@ import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <header>
-      <ul>
-        <li>
-          <button>
-            <NavLink to="/logout">Logout</NavLink>
-          </button>
-        </li>
-        <li>Main Page!</li>
-      </ul>
-    </header>
+    <main>
+      <header>
+        <ul>
+          <li>
+            <button>
+              <NavLink to="/logout">Logout</NavLink>
+            </button>
+          </li>
+          <li>Main Page!</li>
+        </ul>
+      </header>
+      <section></section>
+    </main>
   );
 };
 
