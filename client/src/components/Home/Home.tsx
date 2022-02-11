@@ -10,7 +10,7 @@ const Home = () => {
               <NavLink to="/logout">Logout</NavLink>
             </button>
           </li>
-          <li>Main Page!</li>
+          <li>This is the Main Page!</li>
         </ul>
       </header>
       <section></section>
