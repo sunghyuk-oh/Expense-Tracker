@@ -38,7 +38,7 @@ const Landing = () => {
         </div>
         <div className={classes.content}>
           <h2>
-            It's not just Expense Tracker! <br /> It's <span>EXTRacker</span>
+            It's not just Expense Tracker! <br /> It's <span>EXTRacker!!</span>
           </h2>
         </div>
       </section>
