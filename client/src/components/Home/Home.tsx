@@ -16,6 +16,10 @@ const Home = () => {
         <h1>This is the Main Page!</h1>
         <form>
           <div>
+            <label htmlFor="date"></label>
+            <input type="text" id="date" />
+          </div>
+          <div>
             <label htmlFor="title"></label>
             <input type="text" id="title" />
           </div>
