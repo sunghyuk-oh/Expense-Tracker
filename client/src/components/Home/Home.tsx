@@ -13,7 +13,7 @@ const Home = () => {
         </ul>
       </header>
       <section>
-        <h1>This is the Main Page!</h1>
+        <h1>This is the Main Page! Log your expense!</h1>
         <form>
           <div>
             <label htmlFor="date"></label>
@@ -30,6 +30,16 @@ const Home = () => {
           <div>
             <label htmlFor="category"></label>
             <input type="text" id="category" />
+          </div>
+
+          <div>
+            <label htmlFor=""></label>
+            <input type="text" id="" />
+          </div>
+
+          <div>
+            <label htmlFor=""></label>
+            <input type="text" id="" />
           </div>
 
           <button>Add Expense</button>
