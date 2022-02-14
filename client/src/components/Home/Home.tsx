@@ -37,11 +37,6 @@ const Home = () => {
             <input type="text" id="" />
           </div>
 
-          <div>
-            <label htmlFor=""></label>
-            <input type="text" id="" />
-          </div>
-
           <button>Add Expense</button>
         </form>
       </section>
